@@ -19,5 +19,4 @@ Spoonacular API (https://spoonacular.com/food-api) was used to find the recipes/
 The file [Documentation.pdf](https://github.com/anastasiamexa/Foodies/blob/main/Documentation.pdf) contains a detailed description of the methods used to create the application an a user manual (in Greek).
 
 ## Contributors
-Anastasia Ioanna Mexa, Nancy Kommatidou, Vasiliki Pasia
-University of Piraeus
+Anastasia Ioanna Mexa, Nancy Kommatidou, Vasiliki Pasia [dill] University of Piraeus
