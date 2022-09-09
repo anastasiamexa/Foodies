@@ -20,4 +20,5 @@ platform for the UI.
 The file [Documentation.pdf](https://github.com/anastasiamexa/Foodies/blob/main/Documentation.pdf) contains a detailed description of the methods used to create the application an a user manual (in Greek).
 
 ## Contributors
-Anastasia Ioanna Mexa, Nancy Kommatidou, Vasiliki Pasia <br />University of Piraeus
+[Anastasia Ioanna Mexa](https://github.com/anastasiamexa), [Nancy Kommatidou](https://github.com/NancyKomm), [Vasiliki Pasia](https://github.com/VasPasia) <br />
+University of Piraeus
