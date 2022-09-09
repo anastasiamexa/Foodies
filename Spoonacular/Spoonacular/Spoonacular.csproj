@@ -1,0 +1,367 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{796F860F-EE12-4D83-8211-49B46A1FB05B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spoonacular</RootNamespace>
+    <AssemblyName>Spoonacular</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.42.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.42\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=6.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.6.0.4\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\-min.png" />
+    <Content Include="images\017c1786-c733-424a-af9a-75669b114fb9.jpg" />
+    <Content Include="images\08bc96b9-1ab5-5e91-81df-0f995f07ac02.png" />
+    <Content Include="images\0b371d95-cef3-309c-0783-7dfc0a6d54d4.jpg" />
+    <Content Include="images\1.png" />
+    <Content Include="images\10.jpeg" />
+    <Content Include="images\11.jpeg" />
+    <Content Include="images\1188292_medium2000.jpg" />
+    <Content Include="images\26ddc1a1-7615-4176-ba0a-e0ec3739dba2.jpg" />
+    <Content Include="images\30e36e88-b30d-46d9-9fa8-bc48abcf3a0c.jpg" />
+    <Content Include="images\34.png" />
+    <Content Include="images\35.png" />
+    <Content Include="images\36.png" />
+    <Content Include="images\443094-0.jpeg" />
+    <Content Include="images\443094-0111.jpeg" />
+    <Content Include="images\443094-04.jpeg" />
+    <Content Include="images\4654194.png" />
+    <Content Include="images\468029.jpg" />
+    <Content Include="images\470150.jpg" />
+    <Content Include="images\550927_medium2000.jpg" />
+    <Content Include="images\59d3e5f5-9293-4e6d-a1a8-8c09165c1ef4.jpg" />
+    <Content Include="images\6.jpeg" />
+    <Content Include="images\6368b1dc-1a29-4b91-aedb-0a67a15bfee3.png" />
+    <Content Include="images\6ea67ccc-6b94-4bcf-9932-ed7cb2daea4b.jpg" />
+    <Content Include="images\706434_medium2000.jpg" />
+    <Content Include="images\734455_medium2000.jpg" />
+    <Content Include="images\7908bcff-84d3-42e4-9b53-90d2bc91d12a-34.jpg" />
+    <Content Include="images\7908bcff-84d3-42e4-9b53-90d2bc91d12a.jpg" />
+    <Content Include="images\7a63bb1f-112d-4966-9b03-f7009fd9cf8d.jpg" />
+    <Content Include="images\835df300-3bcc-4d08-a9a0-89d4550492b3.jpg" />
+    <Content Include="images\839ca099-1e2b-1220-d705-f157a9c6f43b.jpg" />
+    <Content Include="images\a6a61343-8421-4473-a6dc-f9cbfec5487b.jpg" />
+    <Content Include="images\award.png" />
+    <Content Include="images\c8f9874f-f296-4fbd-8ef1-d7c945350b95.jpg" />
+    <Content Include="images\cb916186-5618-47fe-9d41-e08bc10aec00.jpg" />
+    <Content Include="images\dab35567-930b-4b62-b97c-85de2e1567a0.jpg" />
+    <Content Include="images\e7d55f0a-7f6b-496f-b709-45f57a3db302.png" />
+    <Content Include="images\e8349300-e916-41f3-914f-9f1b99eac86d.jpg" />
+    <Content Include="images\fb421864-5f62-4330-b059-ce0db37f4837.jpg" />
+    <Content Include="images\foodies-10.png" />
+    <Content Include="images\foodies.png" />
+    <Content Include="images\foodtrivia.png" />
+    <Content Include="images\hamburger.gif" />
+    <Content Include="images\pexels-photo-10212428.jpeg" />
+    <Content Include="images\pexels-photo-10259249.jpeg" />
+    <Content Include="images\pexels-photo-8713145.jpeg" />
+    <Content Include="images\pexels-photo-8984277.jpeg" />
+    <Content Include="images\pexels-photo-9676202.jpeg" />
+    <Content Include="images\pexels-photo-9730582.jpeg" />
+    <Content Include="images\spices.png" />
+    <Content Include="images\spoonacular_150.png" />
+    <Content Include="images\vc-43.jpg" />
+    <Content Include="images\vc.jpg" />
+    <Content Include="images\vector-chef-avatar-illustration.jpg" />
+    <Content Include="images\Virgin-Wines_Image-01.png" />
+    <Content Include="images\wallpaperflare.com_wallpaper.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="jquery.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login.css" />
+    <Content Include="MealPlan.aspx" />
+    <Content Include="MealPlan.css" />
+    <Content Include="nicepage.css" />
+    <Content Include="nicepage.js" />
+    <Content Include="NotFound.aspx" />
+    <Content Include="NotFound.css" />
+    <Content Include="Page-1.css" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Profile.css" />
+    <Content Include="Recipes.aspx" />
+    <Content Include="Recipes.css" />
+    <Content Include="SearchCuisine.aspx" />
+    <Content Include="SearchIngredient.aspx" />
+    <Content Include="SearchMap.aspx" />
+    <Content Include="SearchMap.css" />
+    <Content Include="Signup.aspx" />
+    <Content Include="Table.css" />
+    <Content Include="ViewFavorites.aspx" />
+    <Content Include="ViewMeals.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WinePairing.aspx" />
+    <Content Include="WineRecommendation.aspx" />
+    <Content Include="Wines.aspx" />
+    <Content Include="Wines.css" />
+    <Content Include="Wines1.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliary.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MealPlan.aspx.cs">
+      <DependentUpon>MealPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MealPlan.aspx.designer.cs">
+      <DependentUpon>MealPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Meals.cs" />
+    <Compile Include="NotFound.aspx.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotFound.aspx.designer.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes.aspx.cs">
+      <DependentUpon>Recipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recipes.aspx.designer.cs">
+      <DependentUpon>Recipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCuisine.aspx.cs">
+      <DependentUpon>SearchCuisine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchCuisine.aspx.designer.cs">
+      <DependentUpon>SearchCuisine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchIngredient.aspx.cs">
+      <DependentUpon>SearchIngredient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchIngredient.aspx.designer.cs">
+      <DependentUpon>SearchIngredient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMap.aspx.cs">
+      <DependentUpon>SearchMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchMap.aspx.designer.cs">
+      <DependentUpon>SearchMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="ViewFavorites.aspx.cs">
+      <DependentUpon>ViewFavorites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewFavorites.aspx.designer.cs">
+      <DependentUpon>ViewFavorites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMeals.aspx.cs">
+      <DependentUpon>ViewMeals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewMeals.aspx.designer.cs">
+      <DependentUpon>ViewMeals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinePairing.aspx.cs">
+      <DependentUpon>WinePairing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinePairing.aspx.designer.cs">
+      <DependentUpon>WinePairing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WineRecommendation.aspx.cs">
+      <DependentUpon>WineRecommendation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WineRecommendation.aspx.designer.cs">
+      <DependentUpon>WineRecommendation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wines.aspx.cs">
+      <DependentUpon>Wines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wines.aspx.designer.cs">
+      <DependentUpon>Wines.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57276</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57276/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
