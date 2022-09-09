@@ -4,7 +4,6 @@ A website that makes recipe searching easy according to your needs.
 As part of the course "Web Information Systems", we developed a web application called Foodies.
 
 ## Features
-
 - Users can create and log into their account.
 - Search for recipes based on some specific filters that the user will choose (e.g. ingredients, cuisine, etc.).
 - Save favorite recipes.
