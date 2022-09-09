@@ -13,7 +13,8 @@ As part of the course "Web Information Systems", we developed a web application 
 
 ## Tech
 For this application we used the Visual Studio environment using ASP.NET technology. The database used is PostgreSQL. In addition,
-Spoonacular API (https://spoonacular.com/food-api) was used to find the recipes/wines via JSON requests.
+Spoonacular API (https://spoonacular.com/food-api) was used to find the recipes/wines via JSON requests. Finally, we used the Nicepage 
+platform for the UI.
 
 ## Documentation
 The file [Documentation.pdf](https://github.com/anastasiamexa/Foodies/blob/main/Documentation.pdf) contains a detailed description of the methods used to create the application an a user manual (in Greek).
